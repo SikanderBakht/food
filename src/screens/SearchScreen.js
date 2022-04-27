@@ -1,19 +1,22 @@
-import React, {useState} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 import SearchBar from '../components/SearchBar'
 
 
 const SearchScreen = () => {
-    const [searchText, setSearchText] = useState('') 
+    const [searchText, setSearchText] = useState('')
     return (
         <View>
-            <SearchBar searchText={searchText} onSearchTextChange={(newText) => setSearchText(newText)}/>
-            <Text>Search Screen</Text>
+            <SearchBar
+                searchText={searchText}
+                onSearchTextChange={(newText) => setSearchText(newText)}
+                onSearchTextSubmit={() => console.log('search submitted')} />
+            
         </View>
     )
 }
 
-const styles= StyleSheet.create({
+const styles = StyleSheet.create({
 
 })
 
